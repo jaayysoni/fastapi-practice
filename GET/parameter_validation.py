@@ -37,6 +37,18 @@ def get_reports(
     return {"year": year}
 
 
+@app.get("/products/search/")
+def search_products(
+    name: str = Query(...,alias= "item-name")
+):
+    return {"name": name}
+
+
+
+
+
+
+
 
 
 
