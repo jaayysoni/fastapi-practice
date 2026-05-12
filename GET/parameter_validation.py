@@ -24,6 +24,21 @@ def get_orders(
     return {"status": status,"page": page}
 
 
+@app.get("/reports/")
+def get_reports(
+    year: int = Query(
+        default = 2025,
+        title = "Report Year",
+        description = "Fiscal Year of the report, must be betweeb 2010 to 2100",
+        ge = 2000,
+        le = 2100
+    )
+):
+    return {"year": year}
+
+
+
+
 
 
 
