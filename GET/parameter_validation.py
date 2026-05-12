@@ -17,6 +17,16 @@ def get_products(price: int = Query(default = 10,lt = 50)):
     return {"price": price}
 
 
+@app.get("/orders/")
+def get_orders(
+    status: str = Query(...),
+    page: int = Query(default=1, ge=1)):
+    return {"status": status,"page": page}
+
+
+
+
+
 
 
 
