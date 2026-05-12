@@ -44,9 +44,12 @@ def search_products(
     return {"name": name}
 
 
-
-
-
+@app.get("/legacy/items/")
+def legacy_items(
+    limit: int = Query(default=10, deprecated=True),
+    page_size: int = Query(default=10)
+):
+    return {"limit": limit, "page_size": page_size}
 
 
 
