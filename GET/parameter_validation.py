@@ -1,6 +1,7 @@
 # GET/parameter_validation.py 
 from fastapi import FastAPI, Query, Path
 from typing import List
+from enum import Enum
 
 app = FastAPI()
 
@@ -17,8 +18,8 @@ def get_user(user_id: int = Path(..., gt=1)):
 def get_products(price: int = Query(default = 10,lt = 50)):
     return {"price": price}
 
-@app.get("/orders/")
-def get_orders(
+@app.get("/orders/legacy/")
+def get_orders_legacy(
     status: str = Query(...),
     page: int = Query(default=1, ge=1)):
     return {"status": status,"page": page}
@@ -49,8 +50,8 @@ def legacy_items(
     return {"limit": limit, "page_size": page_size}
 
 
-@app.get("/items/")
-def get_items(tag: List[str] = Query(default = [])):
+@app.get("/items/tags/")
+def get_items_by_tag(tag: List[str] = Query(default = [])):
     return {"tag": tag}
 
 @app.get("/search/")
@@ -58,11 +59,26 @@ def search(ids: List[int] = Query(...)):
     return {"ids": ids}
 
 @app.get("/batch/")
-def batch(ids: List[int] = Query(default = [], min_lenght = 1, max_lenght = 10)):
+def batch(ids: List[int] = Query(default = [], min_length = 1, max_length = 10)):
     return {"ids": ids, "count": len(ids)}
 
 
-    
+class OrderStatus(str, Enum):
+    pending = "pending"
+    shipped = "shipped"
+    delivered = "delivered"
+    cancelled = "cancelled"
+
+class SortOrder(str, Enum):
+    asc = "asc"
+    desc = "desc"
+
+@app.get("/orders/")
+def get_orders_enum(
+    status: OrderStatus =  Query(default = OrderStatus.pending),
+    sort: SortOrder = Query(default = SortOrder.desc)
+):
+    return {"status": status, "sort": sort}
 
 
 
@@ -78,8 +94,6 @@ def batch(ids: List[int] = Query(default = [], min_lenght = 1, max_lenght = 10))
 
 
 
-#7 List Params    ⏳
-#8 Enum Params    ⏳
 
 
 
