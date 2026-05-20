@@ -5,7 +5,7 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
-# two categories, each with their own items
+# nested db, category is the outer key, item_id is the inner key
 fake_db = {
     "electronics": {
         1: {"name": "Laptop", "price": 999.99, "in_stock": True},
@@ -16,25 +16,36 @@ fake_db = {
     }
 }
 
-# all fields required since this is a full update
+# full update model, all fields required, client must send everything
 class Item(BaseModel):
     name: str
     price: float
     in_stock: bool
 
 
-# two path params here, category and item_id both come from the URL
+# both category and item_id come from the URL, not the body
+# URL pattern: /categories/electronics/items/1
 @app.put("/categories/{category}/items/{item_id}")
 def update_item_in_category(category: str, item_id: int, item: Item):
+
+    # check outer level first, does the category exist
     if category not in fake_db:
         return {"error": "category not found"}
+
+    # then check inner level, does the item exist inside that category
     if item_id not in fake_db[category]:
         return {"error": "item not found in this category"}
 
-    # fully replace the item with whatever the client sent
+    # fully replace the item, old data is gone, new data takes its place
     fake_db[category][item_id] = item.model_dump()
 
     return {
         "message": f"item {item_id} in '{category}' updated successfully",
         "item": fake_db[category][item_id]
     }
+
+
+
+
+
+
