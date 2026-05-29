@@ -67,4 +67,46 @@ print(list_for_insert)
 
 
 
+#------------------------------------- remove --------------------------------------------------------
+
+list_for_remove = [1,2,3,4,5,6,7,8,9,10]
+print(list_for_remove)
+
+list_for_remove.remove(1)
+print(list_for_remove)
+
+list_for_remove.pop(1)
+print(list_for_remove)
+
+del list_for_remove[5:]
+print(list_for_remove)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
