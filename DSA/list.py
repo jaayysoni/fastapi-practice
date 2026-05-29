@@ -125,9 +125,16 @@ print(list_to_slice[5:10:3])
 
 
 
+#------------------------------------------- reverse --------------------------------------------------
+
+list_to_reverse = [10,9,8,7,6,5,4,3,2,1]
+
+list_to_reverse.reverse()
+print(list_to_reverse)
 
 
-
+reversed = list_to_reverse[::-1]
+print(reversed)
 
 
 
