@@ -27,16 +27,25 @@ list_comprehention = [x ** 2 for x in range(5)]
 print(list_comprehention)
 
 
+#----------------------------------------------- append -------------------------------------------------------
 
 
+dummy_list = [1,3,5,8,2,4,10,9]
 
+dummy_list.append(7)
+print(dummy_list)
 
+dummy_list.insert(1,11)
+print(dummy_list)
 
+dummy_list.extend(filled_list)
+print(dummy_list)
 
+dummy_list += list_comprehention
+print(dummy_list)
 
-
-
-
+dummy = dummy_list + list_comprehention
+print(dummy)
 
 
 
