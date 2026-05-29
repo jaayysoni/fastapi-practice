@@ -81,14 +81,23 @@ print(list_for_remove)
 del list_for_remove[5:]
 print(list_for_remove)
 
+print("Remove till here")
+#------------------------------------- pop ------------------------------------------------------------
 
+list_for_pop = [1,2,3,4,5,6,7,8,9]
 
+removed = list_for_pop.pop()
+print(removed)
+print(list_for_pop)
 
+list_for_pop.pop(5)
+print(list_for_pop)
 
+list_for_pop.pop(-2)
+print(list_for_pop)
 
-
-
-
+list_for_pop.pop(0)
+print(list_for_pop)
 
 
 
