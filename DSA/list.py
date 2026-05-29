@@ -47,13 +47,22 @@ print(dummy_list)
 dummy = dummy_list + list_comprehention
 print(dummy)
 
+#-------------------------------------- insert ------------------------------------------------------
 
+list_for_insert = [1,2,3,4,5,6,7,8,9,10]
 
+list_for_insert.insert(0,11)
+print(list_for_insert)
 
+list_for_insert.insert(5,100)
+print(list_for_insert)
 
+list_for_insert.insert(len(list_for_insert),500)
+print(list_for_insert)
 
-
-
+i = 10
+list_for_insert.insert(i,250)
+print(list_for_insert)
 
 
 
