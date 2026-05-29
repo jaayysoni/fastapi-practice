@@ -26,7 +26,7 @@ print(repeated_value_list)
 list_comprehention = [x ** 2 for x in range(5)]
 print(list_comprehention)
 
-
+print("create List ends here")
 #----------------------------------------------- append -------------------------------------------------------
 
 
@@ -47,6 +47,7 @@ print(dummy_list)
 dummy = dummy_list + list_comprehention
 print(dummy)
 
+print("append ends here")
 #-------------------------------------- insert ------------------------------------------------------
 
 list_for_insert = [1,2,3,4,5,6,7,8,9,10]
@@ -64,7 +65,7 @@ i = 10
 list_for_insert.insert(i,250)
 print(list_for_insert)
 
-
+print("insert ends here")
 
 
 #------------------------------------- remove --------------------------------------------------------
@@ -98,6 +99,32 @@ print(list_for_pop)
 
 list_for_pop.pop(0)
 print(list_for_pop)
+
+print("pop ends here")
+
+#------------------------------------ Slice ------------------------------------------------------------
+
+list_to_slice = [1,2,3,4,5,6,7,8,9,10,9,8,7,6,5,4,3,2,1]
+copy = list_to_slice[:]
+print(copy)
+
+first_three = list_to_slice[:3]
+print(first_three[:3])
+
+print(list_to_slice[5:])
+
+print(list_to_slice[3:7])
+
+print(list_to_slice[::2])
+
+print(list_to_slice[::-1])
+
+print(list_to_slice[-3:])
+
+print(list_to_slice[5:10:3])
+
+
+
 
 
 
