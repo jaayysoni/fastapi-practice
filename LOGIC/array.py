@@ -4,7 +4,6 @@
 a = "my name is jay"
 b = "my name is akshey"
 c = []
-
 for i in a.split():
     if i in b.split():
         c.append(i)
@@ -16,7 +15,6 @@ print(c)
 a = "my name is jay"
 b = "my name is akshey"
 c = []
-
 for i in a.split():
     if i not in b.split():
         c.append(i)
@@ -26,7 +24,6 @@ print(c)
 
 # given a sentence remove all duplicate words and print the result
 sentence = "jay is a good developer and jay loves to code and is happy"
-
 result = []
 for i in sentence.split():
     if i not in result:
@@ -42,7 +39,6 @@ count = 0
 for i in sentence.split():
     if i == word:
         count += 1
-
 print(count)
 
 
@@ -51,6 +47,33 @@ print(count)
 sentence = "jay is a good developer and jay loves to code and jay is happy"
 new = sentence.split()
 print(new[::-1])
+
+
+
+# given a sentence find the longest word in it or can say word with most no of letters in it 
+sentence = "jay is a good developer and jay loves to code and jay is happy"
+new_sentence = sentence.split()
+final = 0
+for i in new_sentence:
+    if len(i) > final:
+        final = len(i)
+print(final)
+
+
+# given two sentence, find all unique words across both ( no dulicate )
+a = "jay is a good developer and loves to code"
+b = "priya is a great designer and loves to travel"
+seen = []
+for i in a.split() + b.split():
+    if i not in seen:
+        seen.append(i)
+print(seen)
+
+
+
+
+
+
 
 
 
