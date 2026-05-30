@@ -70,7 +70,14 @@ for i in a.split() + b.split():
 print(seen)
 
 
-
+# given a sentence, return only words that have more than three letters
+sentence = "jay is a good developer and he loves to code every single day"
+seen = []
+for i in sentence.split():
+    if len(i) > 3:
+        seen.append(i)
+print(seen)
+        
 
 
 
