@@ -47,6 +47,10 @@ print(count)
 
 
 
+# given an sentence reverse the order of words not letters
+sentence = "jay is a good developer and jay loves to code and jay is happy"
+new = sentence.split()
+print(new[::-1])
 
 
 
