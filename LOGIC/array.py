@@ -80,7 +80,13 @@ print(seen)
         
 
 
-
+# given a sentence check if there is any speficic word in it 
+sentence = "jay is a passionate backend developer who loves building apis and working with databases every single day"
+word = "apis"
+if word in sentence.split():
+    print(True)
+else:
+    print(False)
 
 
 
