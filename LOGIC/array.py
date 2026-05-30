@@ -90,12 +90,21 @@ else:
 
 
 
+# given a sentence sort word alphabetically 
+sentence = "jay is a passionate backend developer who loves building apis every day"
+new = sorted(sentence.split())
+print(new)
 
 
-
-
-
-
+# given a sentence return the most repeated word
+sentence = "jay loves to code and jay loves backend development and jay always says code every day because code is life and coding is what jay loves most"
+seen = {}
+for i in sentence.split():
+    if i not in seen:
+        seen[i] = 1
+    else:
+        seen[i] += 1
+print(max(seen, key=seen.get))
 
 
 
