@@ -108,7 +108,7 @@ for i in sentence.split():
         seen[i] += 1
 print(max(seen, key=seen.get))
 
-
+print("List Over here, Hashmap below")
 #--------------------------------------- Hashmap ---------------------------------------------------------
 
 
@@ -128,10 +128,124 @@ hashmap["work"] = 5000
 print(list(hashmap.keys()))
 
 
+# update an existing marks 
+hashmap["SDE"] = 200
+print(hashmap)
+
+
+# Delete Student from dict 
+del hashmap["jay"]
+hashmap.pop("soni")
+print(hashmap)
+
+
+# Check if student exists in dict 
+print("SDE" in hashmap)
+
+
+# Print all keys, value and key value pairs 
+print(hashmap.keys(), hashmap.values(),hashmap)
 
 
 
+# Given a list of words count how many times that words appears
+words = ["jay", "code", "jay", "python", "code", "jay", "backend", "code", "python", "jay"]
+seen = {}
+for word in words:
+    if word not in seen:
+        seen[word] = 1
+    else:
+        seen[word] += 1
+print(seen)
 
+
+
+# Given two dict merge them into one
+d1 = {"jay": 90, "priya": 85, "ram": 70}
+d2 = {"soni": 95, "neha": 75, "amit": 60}
+d1.update(d2)
+print(d1)
+d3 = {**d1 ,**d2}
+print(d3)
+d4 = d1 | d2
+print(d4)
+
+
+
+# given a dict give the key with highest value 
+d = {"jay": 90, "priya": 85, "ram": 70, "soni": 95, "neha": 75}
+print(max(d, key=d.get))
+
+
+
+# Given a sentence count frequency of each word
+sentence = "jay loves to code and jay loves backend development and jay always says code every day because code is life and coding is what jay loves most"
+seen = {}
+for i in sentence.split():
+    if i not in seen:
+        seen[i] = 1
+    else:
+        seen[i] += 1
+print(seen)
+
+
+
+# Given a list of numbers list them as even or odd
+numbers = [1,2,3,4,5,6,7,8,9,10]
+num = {"Even": [],"Odd": []}
+for i in numbers:
+    if i % 2 == 0:
+        num["Even"].append(i)
+    else:
+        num["Odd"].append(i)
+print(num)
+
+
+
+# Given a dict reverse it, keys become value and value become keys
+d = {"jay": 90, "priya": 85, "ram": 70}
+reversed_dict = {}
+for key,value in d.items():
+    reversed_dict[value] = key
+print(reversed_dict)
+
+
+
+# given a dict return only words that appears more than twice
+sentence = "jay loves to code and jay loves backend and jay always code every day code is life"
+seen = {}
+for i in sentence.split():
+    if i not in seen:
+        seen[i] = 1
+    else:
+        seen[i] += 1
+
+winner = []
+for key,values in seen.items():
+    if value > 2:
+        winner.append(key)
+print(winner)
+
+
+
+# Given two dict, find common key in both
+d1 = {"jay": 90, "priya": 85, "ram": 70, "soni": 95}
+d2 = {"jay": 80, "neha": 75, "ram": 60, "amit": 55}
+seen = []
+for key in d1:
+    if key in d2:
+        seen.append(key)
+print(seen)
+
+
+
+# Given a list of studensts and marks, find all students who passed (marks > 40)
+students = {"jay": 90, "priya": 35, "ram": 70, "soni": 20, "neha": 75, "amit": 38}
+passed = []
+for key, value in students.items():
+    if value > 40:
+        passed.append(key)
+print(passed)
 
 
 
