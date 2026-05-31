@@ -123,7 +123,9 @@ hashmap = {
 print(list(hashmap.keys()))
 
 
-
+# add a new student to dict
+hashmap["work"] = 5000
+print(list(hashmap.keys()))
 
 
 
