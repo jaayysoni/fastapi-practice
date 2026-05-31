@@ -1,5 +1,7 @@
 #questions asked me in interview 
 
+#------------------------------------------ List ----------------------------------------------------------
+
 # we need to get all the common words in a and b , words not letters and get it in c and print
 a = "my name is jay"
 b = "my name is akshey"
@@ -107,9 +109,18 @@ for i in sentence.split():
 print(max(seen, key=seen.get))
 
 
+#--------------------------------------- Hashmap ---------------------------------------------------------
 
 
-
+# create a list of students and their marks, print all names
+hashmap = {
+    "jay" : 100,
+    "soni": 200,
+    "B"   : 150,
+    "Tech": 80,
+    "SDE" : 250,
+}
+print(list(hashmap.keys()))
 
 
 
